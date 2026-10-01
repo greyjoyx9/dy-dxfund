@@ -1,0 +1,12 @@
+# Simple Python code to greet the user
+
+# Function to ask for user details
+def greet_user():
+    name = input("What is your name? ")
+    age = input("How old are you? ")
+
+    # Greet the user with their name and age
+    print(f"Hello, {name}! You are {age} years old.")
+
+# Call the function to execute
+greet_user()
