@@ -1,0 +1,42 @@
+class User:
+    """
+    A class to represent a user with a name and age.
+    """
+
+    def init(self, name: str, age: int):
+        self.name = name
+        self.age = age
+
+    def greet(self) -> str:
+        """Returns a greeting message with the user's name and age."""
+        return f"Hello, {self.name}! You are {self.age} years old."
+
+def get_user_input() -> User:
+    """
+    Asks for user details and returns a User object after validating the input.
+    """
+    while True:
+        try:
+            name = input("What is your name? ").strip()
+            if not name:
+                raise ValueError("Name cannot be empty.")
+
+            age_input = input("How old are you? ").strip()
+            age = int(age_input)  # trying to convert age to an integer
+
+            if age < 0:
+                raise ValueError("Age cannot be negative.")
+            break  # input valid, exit the loop
+
+        except ValueError as e:
+            print(f"Invalid input: {e}. Please try again.")
+
+    return User(name, age)
+
+def main():
+    """Main function to execute the program."""
+    user = get_user_input()
+    print(user.greet())
+
+if name == "main":
+    main()
